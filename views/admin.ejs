@@ -15,9 +15,9 @@
     <section class="mt-5 container">
       <h1 class="">Admin Page</h1>
 
-      <form action="/logout" method="post">
-        <button type="submit" class="btn btn-primary">Logout</button>
-      </form>
+      <button type="submit" class="btn btn-primary">
+        <a href="/logout" class="btn btn-primary">Logout</a>
+      </button>
 
       <% if (flash_message != "") { %>
       <div
