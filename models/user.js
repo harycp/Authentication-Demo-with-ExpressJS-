@@ -9,12 +9,13 @@ const userSchema = new Schema({
   },
   password: {
     type: String,
-    required: [true, "username is required"],
+    required: [true, "password is required"],
   },
 });
 
 userSchema.statics.findByCredentials = async function (username, password) {
   const user = await this.findOne({ username });
+  if (!user) return false;
   const isMatch = await bcrypt.compare(password, user.password);
   return isMatch ? user : false;
 };
